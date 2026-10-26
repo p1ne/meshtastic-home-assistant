@@ -423,6 +423,15 @@ To open the web client:
 2. Open the "Meshtastic" sidebar item. If you don't see it, reload the Home Assistant interface.
 3. Press "Open" on the gateway. The web client connects to it on its own.
 
+## TCP proxy
+
+With the TCP proxy enabled, other Meshtastic clients connect to Home Assistant's address on the proxy port
+(4403 by default) and share the gateway's single connection to the radio.
+
+If [Meshtastic UI](https://github.com/Daring-Designs/meshtastic-ui-ha) is installed, the proxy is offered to it
+under Settings > Devices & services > Discovered as soon as the proxy starts, so Meshtastic UI connects through
+the proxy (`127.0.0.1`) instead of opening a second connection to the radio.
+
 ## Known limitations
 
 - A radio serves one phone-API client at a time. The Meshtastic phone apps and other tools can only connect while this integration is not using the radio, unless you enable the [web client](#meshtastic-web-client) or the TCP proxy and connect through it.
